@@ -53,7 +53,7 @@ extension SwiftAsyncSocket {
         var error: SwiftAsyncSocketError?
 
         // Need to convert the port to an= UInt16 so that it can be passed throughout the app
-        let uint16Port = SwiftAsyncSocket.convertToUInt16(port: port)
+        let uint16Port = UInt16(exactly: port) ?? 0
         if uint16Port == 0 {
           SwiftAsyncSocketError.errno(code: 202401, reason: "Error: Could not convert the URL Port to a UInt16.")
         } else {
@@ -270,11 +270,5 @@ extension SwiftAsyncSocket {
                 self.didConnect(aStateIndex)
             }
         }
-    }
-
-    // Method to safely convert an Int to UInt16
-    static func convertToUInt16(port: Int) -> UInt16 {
-        // Convert Int to UInt16 with default value (e.g., 0) if conversion fails
-        return UInt16(exactly: port) ?? 0
     }
 }
