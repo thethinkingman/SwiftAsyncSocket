@@ -1,23 +1,15 @@
 # SwiftAsyncSocket
  [![Version Status](https://img.shields.io/cocoapods/v/SwiftAsyncSocket.svg?style=flat)](http://cocoadocs.org/docsets/SwiftAsyncSocket) [![Platform](http://img.shields.io/cocoapods/p/SwiftAsyncSocket.svg?style=flat)](http://cocoapods.org/?q=SwiftAsyncSocket) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) ![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)
 
-SwiftAsyncSocket is a socket connnection tool based on GCD with full implement by **Swift**. 
-
-I translated it from [CocoaAsyncSocket](https://github.com/robbiehanson/CocoaAsyncSocket).
-
-In other words, if you have experience to use **CocoaAsyncSocket**, you will feel familar to this.
+SwiftAsyncSocket is a socket connnection tool based on GCD. 
 
 **SwiftAsyncSocket** can support both TCP/IP and UDP/IP socket.
-
-**SwiftAsyncSocket** is heavier then **CocoaAsyncSocket**. Because there is more then 8,000 line in one file of **CocoaAsyncSocket**. I scattered these logic across multiple files.
 
 **SwiftAsyncSocket** has already passed **SwiftLint** check.
 
 ## Installation
-### 1. Mannual install
-**SwiftAsyncSocket** now support **Cocoapods**
-
-So now you can only use this by those steps.
+### 1. Manual install
+**SwiftAsyncSocket** now supports **Cocoapods**
 
 ```
 # Download the source of the code 
@@ -28,7 +20,9 @@ cd SwiftAsnycSocket
 open ./SwiftAsyncSocket.xcodeproj
 ```
 
-Then open xcodeproj file. And use `cmd + b` to build a framework. Finally copy it to your work.
+Open the xcodeproj file and use `cmd + b` to build the framework.
+Finally copy it to your work.
+
 ### 2. CocoaPods
 Install using [CocoaPods](http://cocoapods.org) by adding this line to your Podfile:
 
@@ -36,17 +30,17 @@ Install using [CocoaPods](http://cocoapods.org) by adding this line to your Podf
 use_frameworks! # Add this if you are targeting iOS 8+ or using Swift
 pod 'SwiftAsyncSocket'  
 ````
+
 ### 3.Carthage
-SwiftAsyncSocket is [Carthage](https://github.com/Carthage/Carthage) compatible. To include it add the following line to your `Cartfile`
+SwiftAsyncSocket is [Carthage](https://github.com/Carthage/Carthage) compatible. Add the following line to your `Cartfile`
 
 ```bash
 github "chouheiwa/SwiftAsyncSocket"
 ```
 
-
 ## Usage
 #### TCP/IP
-##### 1. Use as client. 
+##### 1. Use as a TCP client.
 
 If there has a socket server start at localhost:8080
 ```Swift
@@ -94,7 +88,7 @@ extension Client: SwiftAsyncSocketDelgate {
 }
 
 ```
-##### 2. Use as server.
+##### 2. Use as a TCP nserver.
 ```Swift
 import Foundation
 import SwiftAsyncSocket
@@ -159,7 +153,7 @@ class Server: SwiftAsyncSocketDelegate {
 ```
 
 #### UDP
-##### 1. Use as client. 
+##### 1. Use as a UDP client. 
 ```Swift
 import Foundation
 import SwiftAsyncSocket
@@ -205,7 +199,7 @@ extension Client: SwiftAsyncUDPSocketDelgate {
 }
 ```
 
-##### 2. Use as server.
+##### 2. Use as a UDP server.
 
 ```Swift
 import Foundation
