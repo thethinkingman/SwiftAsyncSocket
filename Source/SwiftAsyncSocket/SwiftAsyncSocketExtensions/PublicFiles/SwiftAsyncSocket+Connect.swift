@@ -273,7 +273,7 @@ extension SwiftAsyncSocket {
     }
 
     // Method to safely convert an Int to UInt16
-    private func convertToUInt16(port: Int) -> UInt16 {
+    static func convertToUInt16(port: Int) -> UInt16 {
         // Convert Int to UInt16 with default value (e.g., 0) if conversion fails
         return UInt16(exactly: port) ?? 0
     }
