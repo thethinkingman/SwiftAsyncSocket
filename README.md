@@ -86,7 +86,7 @@ extension Client: SwiftAsyncSocketDelgate {
 }
 
 ```
-##### 2. Use as a TCP nserver.
+##### 2. Use as a TCP server.
 ```Swift
 import Foundation
 import SwiftAsyncSocket
