@@ -51,7 +51,6 @@ extension SwiftAsyncSocket {
                         viaInterface interface: String? = nil,
                         timeOut: TimeInterval = -1) throws {
         var error: SwiftAsyncSocketError?
-        let uint16Port: UInt16
 
         // Need to convert the port to an= UInt16 so that it can be passed throughout the app
         let uint16Port = convertToUInt16(port: port)
