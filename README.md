@@ -1,11 +1,9 @@
 # SwiftAsyncSocket
  [![Version Status](https://img.shields.io/cocoapods/v/SwiftAsyncSocket.svg?style=flat)](http://cocoadocs.org/docsets/SwiftAsyncSocket) [![Platform](http://img.shields.io/cocoapods/p/SwiftAsyncSocket.svg?style=flat)](http://cocoapods.org/?q=SwiftAsyncSocket) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) ![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)
 
-SwiftAsyncSocket is a socket connnection tool based on GCD. 
+SwiftAsyncSocket is a socket connnection tool based on GCD which supports both TCP and UDP.
 
-**SwiftAsyncSocket** can support both TCP/IP and UDP/IP socket.
-
-**SwiftAsyncSocket** has already passed **SwiftLint** check.
+**SwiftAsyncSocket** has passed **SwiftLint** check.
 
 ## Installation
 ### 1. Manual install
