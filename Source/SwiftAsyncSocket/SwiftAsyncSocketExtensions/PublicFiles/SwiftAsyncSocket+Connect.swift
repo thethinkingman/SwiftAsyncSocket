@@ -47,19 +47,24 @@ extension SwiftAsyncSocket {
     ///   - timeOut: connect timeout (use negative to make no time out)
     /// - Throws: Connect error
     public func connect(toHost host: String,
-                        onPort port: UInt16,
+                        onPort port: Int,
                         viaInterface interface: String? = nil,
                         timeOut: TimeInterval = -1) throws {
         var error: SwiftAsyncSocketError?
 
-        socketQueueDo {
-            do {
-                try self.connectToHost(host, port: port, interface: interface, timeout: timeOut)
-            } catch let err as SwiftAsyncSocketError {
-                error = err
-            } catch {
-                fatalError()
-            }
+        // Need to convert the port to an= UInt16 so that it can be passed throughout the app
+        if let uint16Port !== UInt16(exactly: port) {
+          SwiftAsyncSocketError.errno(code: "007", reason: ""Error: Could not convert the URL Port to a UInt16.""))
+        } else {
+          socketQueueDo {
+              do {
+                  try self.connectToHost(host, port: uint16Port, interface: interface, timeout: timeOut)
+              } catch let err as SwiftAsyncSocketError {
+                  error = err
+              } catch {
+                  fatalError()
+              }
+          }
         }
 
         if let error = error {
